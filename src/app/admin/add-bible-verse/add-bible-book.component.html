@@ -1,0 +1,35 @@
+<mat-card class="book-card">
+  <mat-card-header>
+    <mat-card-title>Add Book</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #form = "ngForm">
+    <mat-form-field appearance="legacy">
+      <mat-label>Book Name</mat-label>
+      <input matInput name="name" placeholder="Book Name" [(ngModel)] = "bookDataModel.name">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Short Name</mat-label>
+      <input matInput name="shortname" [(ngModel)] = "bookDataModel.shortname">
+    </mat-form-field>
+
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput name="description" [(ngModel)] = "bookDataModel.description">
+    </mat-form-field>
+
+    <br>
+
+    {{form.value | json}}
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-fab mat-raised-button color = "primary" (click) = onSubmit(form)><mat-icon>add</mat-icon></button>
+    <button mat-fab mat-raised-button color = "warn"><mat-icon>close</mat-icon></button>
+    <button mat-fab mat-raised-button color = 'secondary'><mat-icon>home</mat-icon></button>
+  </mat-card-actions>
+  </mat-card>
+
+

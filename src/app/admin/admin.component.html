@@ -1,0 +1,18 @@
+<main>
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer  mode="side">
+      <ul class="menu">
+        <li> <a [routerLink] = "['/add-book']" target="_blank" rel="noopener noreferrer"></a> Add Book</li>
+        <li>Add Verse</li>
+
+      </ul>
+    </mat-drawer>
+
+      <button  mat-fab mat-raised-button color = blue (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <app-add-bible-book></app-add-bible-book>
+
+  </mat-drawer-container>
+</main>
+

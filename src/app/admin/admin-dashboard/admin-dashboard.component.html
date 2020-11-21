@@ -1,0 +1,18 @@
+<main>
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer  mode="side">
+      <ul class="menu">
+        <li>Add Book</li>
+        <li>Add Verse</li>
+
+      </ul>
+    </mat-drawer>
+
+      <button  mat-fab mat-raised-button color = blue (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <app-add-bible-verse></app-add-bible-verse>
+
+  </mat-drawer-container>
+</main>
+
