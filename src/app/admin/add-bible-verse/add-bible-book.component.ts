@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { BibleService } from 'src/app/bible.service';
 import { BookDataModel } from 'src/app/book-data-model';
 
@@ -32,5 +33,9 @@ export class AddBibleBookComponent implements OnInit {
       data => console.log(data),
       error => console.log(error)
     );
+  }
+
+  goToBookList =() => {
+    // RouterLink()
   }
 }
