@@ -1,0 +1,17 @@
+Fix the navigations of the Bible and also the uploading format
+How do I fix the uploading format
+
+How to fix it. Upload in csv format
+Name, shortname, noOfChapters, Description  ---Books
+number, text  ---Verses
+
+
+
+First of all, demo
+What is needed for the bibleApp
+1. Feedback for successful registration
+2. Making sure Verses numbers are unique
+3. Book names are unique too
+4. Making a login route and guard for admin
+5. Catching Error in Angular.
+6. Optimize for every screen size

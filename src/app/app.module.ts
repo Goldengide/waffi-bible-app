@@ -21,6 +21,14 @@ import { BooksComponent } from './admin/add-bible-verse/books/books.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { BookListComponent } from './users/book-list/book-list.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutModule } from '@angular/cdk/layout';
+import { VerseDemoComponent } from './users/verse-demo/verse-demo.component';
+import { ChapterListComponent } from './users/chapter-list/chapter-list.component';
+import { BookChapterListComponent } from './users/book-list/book-chapter-list.component';
+import { BookChapterVerseListComponent } from './users/book-list/book-chapter-verse-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,12 @@ import { MatSortModule } from '@angular/material/sort';
     UsersComponent,
     AddBibleVerseComponent,
     AddBibleBookComponent,
-    BooksComponent
+    BooksComponent,
+    BookListComponent,
+    VerseDemoComponent,
+    ChapterListComponent,
+    BookChapterListComponent,
+    BookChapterVerseListComponent
   ],
   imports: [
     HttpClientModule,
@@ -46,7 +59,10 @@ import { MatSortModule } from '@angular/material/sort';
     BrowserAnimationsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatGridListModule,
+    MatMenuModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

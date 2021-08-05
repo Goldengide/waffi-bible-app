@@ -13,6 +13,11 @@
       <mat-label>Short Name</mat-label>
       <input matInput name="shortname" [(ngModel)] = "bookDataModel.shortname">
     </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+      <mat-label>Number of Chapters</mat-label>
+      <input matInput name="noOfChapters" [(ngModel)] = "bookDataModel.noOfChapters">
+    </mat-form-field>
 
     <br>
     <mat-form-field appearance="fill">
@@ -22,7 +27,7 @@
 
     <br>
 
-    {{form.value | json}}
+    <!-- {{form.value | json}} -->
     </form>
   </mat-card-content>
   <mat-card-actions>

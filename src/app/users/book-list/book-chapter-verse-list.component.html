@@ -1,0 +1,20 @@
+<main>
+  <div class="container">
+    <!-- <h1>{{books[0].name}}</h1> -->
+    <h2>
+      <a *ngIf = "showleftArrow" routerLink="/books/{{bookShortName}}/{{prevChapterNumber}}"><<</a>
+      <a routerLink="/users"> {{bookName}} {{chapterNumber}} </a>
+       <a *ngIf = "showRightArrow" routerLink="/books/{{bookShortName}}/{{nextChapterNumber}}">>></a>
+  </h2>
+
+    <p *ngFor = "let chapterVerse of chapterVerses" class="verse"> <span>{{chapterVerse.number}}</span>
+      {{chapterVerse.text}}
+    </p>
+
+    <!-- <h2>
+      <a *ngIf = "showleftArrow" routerLink="/books/{{bookShortName}}/{{prevChapterNumber}}"><<</a>
+      <a routerLink="/users"> {{bookName}} {{chapterNumber}} </a>
+       <a *ngIf = "showRightArrow" routerLink="/books/{{bookShortName}}/{{nextChapterNumber}}">>></a>
+  </h2> -->
+  </div>
+</main>

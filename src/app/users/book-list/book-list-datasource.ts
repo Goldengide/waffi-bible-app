@@ -3,26 +3,44 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { BookDataModel } from 'src/app/book-data-model';
 
 // TODO: Replace this with your own data model type
-
+export interface BookListItem {
+  name: string;
+  id: number;
+}
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA = [
-  {name: 'Hydrogen', shortname: "Hyd", description: ",...."},
-  {name: 'Hydrogen', shortname: "Hyd", description: ",...."},
-  {name: 'Hydrogen', shortname: "Hyd", description: ",...."}
-
+const EXAMPLE_DATA: BookListItem[] = [
+  {id: 1, name: 'Hydrogen'},
+  {id: 2, name: 'Helium'},
+  {id: 3, name: 'Lithium'},
+  {id: 4, name: 'Beryllium'},
+  {id: 5, name: 'Boron'},
+  {id: 6, name: 'Carbon'},
+  {id: 7, name: 'Nitrogen'},
+  {id: 8, name: 'Oxygen'},
+  {id: 9, name: 'Fluorine'},
+  {id: 10, name: 'Neon'},
+  {id: 11, name: 'Sodium'},
+  {id: 12, name: 'Magnesium'},
+  {id: 13, name: 'Aluminum'},
+  {id: 14, name: 'Silicon'},
+  {id: 15, name: 'Phosphorus'},
+  {id: 16, name: 'Sulfur'},
+  {id: 17, name: 'Chlorine'},
+  {id: 18, name: 'Argon'},
+  {id: 19, name: 'Potassium'},
+  {id: 20, name: 'Calcium'},
 ];
 
 /**
- * Data source for the Books view. This class should
+ * Data source for the BookList view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class BooksDataSource extends DataSource<BookDataModel> {
-  data: BookDataModel[];
+export class BookListDataSource extends DataSource<BookListItem> {
+  data: BookListItem[] = EXAMPLE_DATA;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -35,7 +53,7 @@ export class BooksDataSource extends DataSource<BookDataModel> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<BookDataModel[]> {
+  connect(): Observable<BookListItem[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
@@ -59,7 +77,7 @@ export class BooksDataSource extends DataSource<BookDataModel> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: BookDataModel[]) {
+  private getPagedData(data: BookListItem[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -68,7 +86,7 @@ export class BooksDataSource extends DataSource<BookDataModel> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: BookDataModel[]) {
+  private getSortedData(data: BookListItem[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -77,9 +95,7 @@ export class BooksDataSource extends DataSource<BookDataModel> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
-        case 'shortname': return compare(a.shortname, b.shortname, isAsc);
-        case 'description': return compare(a.description, b.description, isAsc);
-        // case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
     });

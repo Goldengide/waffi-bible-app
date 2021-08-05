@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
     console.log("hello");
     // console.log(this.books);
     this.bibleService.getBooks().subscribe({
-      next: books => this.books = books
+      next: books => {this.books = books.data; console.log(books)}
     });
   }
 

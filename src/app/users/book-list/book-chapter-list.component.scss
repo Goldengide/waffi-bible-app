@@ -1,0 +1,32 @@
+.full-width-table {
+  width: 100%;
+}
+
+.books {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // float: left;
+  justify-content: flex-start;
+  padding: 1em;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  // font-size: large;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+}
+
+.books a {
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 1em;
+  text-decoration: none;
+  font-size: medium;
+  color: #000;
+}
+.books a:not(:first-child) {
+  border-left: solid thin #eee;
+}
+.books a:hover {
+  color: rgb(131, 11, 11);
+}

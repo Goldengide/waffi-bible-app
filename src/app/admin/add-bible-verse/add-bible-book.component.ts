@@ -14,6 +14,7 @@ export class AddBibleBookComponent implements OnInit {
   defaultValues: BookDataModel = {
     name: "Genesis",
     shortname: "Gen",
+    noOfChapters: 50,
     description: "Na this book tell the tori of how God take run the pafffi of heaven and earth"
   }
 

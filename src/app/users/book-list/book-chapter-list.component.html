@@ -1,0 +1,6 @@
+<section class="books">
+<!-- THings worked in ways we didn't expect {{chapterNumber}} -->
+
+<a *ngFor = "let chapter of chapters" routerLink="/books/{{bookShortName}}/{{chapter.number}}"><span>{{chapter.number}}</span></a>
+
+</section>
